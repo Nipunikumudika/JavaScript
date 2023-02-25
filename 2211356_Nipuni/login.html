@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <body>    
+       <center>
+            <h1 style="color:purple">Login</h1>
+        </center>
+        <form>  
+            <center>
+                <div class="container">   
+                    <label>Username : </label>   
+                    <input type="text" id="username" placeholder="Enter Username" name="username" required >  <br/>
+                    <label>Password: </label>   
+                    <input type="password" id="password" placeholder="Enter Password" name="password" required >  
+                    <center><button onclick="login()">Login</button>   </center>
+                </div>   
+            </center>
+        </form>     
+    </body>
+
+    <script>
+        try{
+            if(p==1){
+            var k=0;
+        while (k < users.length) {
+            console.log(users[k]);
+            k++;
+            }
+        }
+        }
+        catch{
+            var users=[["Nipuni",1234], ["Kumudika",5678],];
+        }
+
+        //when login click
+        function login(){
+            const username=document.getElementById("username").value;
+            const password=document.getElementById("password").value;
+
+            let i = 0;
+            let pass=0;
+
+        while (i < users.length) {
+            if(users[i][0]==username && users[i][1]==password){
+                window.close();  
+                var w=window.open('create.html');
+                w.username=username;
+                w.password=password;
+                w.users=users;
+                pass=1;
+            }
+            i++;
+            }
+            if(pass==0){
+                alert("Error in Username or Password");
+            }
+        }
+    </script>
+</body>
+</html>

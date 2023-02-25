@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <body>
+        <div class="username">
+            <h5 id="username"></h5>
+          </div> 
+          <button onclick="logout()" style="width: 100px;">LogOut</button>   
+       <center>
+            <h1 style="color:purple">Login</h1>
+        </center>
+        <form>  
+            <center>
+                <div class="container">   
+                    <label id="label1"> </label>
+                    <br/>
+                    <label id="label2"></label> 
+                    <center><button onclick="create()">Create User</button></center>  
+            </center>
+        </form>     
+    </body>
+
+    <script>
+        // get username to label
+        document.getElementById('label1').innerText = username; 
+        // get username to div
+        document.getElementById('username').innerText = username; 
+        // get email to label
+        document.getElementById('label2').innerText = username+'@gmail.com'; 
+        //when create user click
+        function create(){
+            window.close();  
+            var w2=window.open('createUser.html');
+            w2.users=users;
+        }
+        //when logout click
+        function logout(){
+            window.close();  
+            var p=1;
+            var w=window.open('login.html');
+            w.users=users;
+            w.p=p;
+        }
+    </script>
+</body>
+</html>

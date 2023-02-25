@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <body>  
+        <div class="username">
+            <h5 id="usernamediv"></h5>
+          </div> 
+          <button onclick="logout()" style="width: 100px;">LogOut</button>     
+       <center>
+            <h1 style="color:purple">Create User</h1>
+        </center>  
+        <form>  
+            <center>
+                <div class="container">   
+                    <label>Username : </label>   
+                    <input type="text" id="username" placeholder="Enter Username" name="username" required >  <br/>
+                    <label>Password: </label>   
+                    <input type="password" id="password" placeholder="Enter Password" name="password" required >  
+                    <center><button onclick="create()">Create</button>   </center>
+                </div>   
+            </center>
+        </form>     
+    </body>
+
+    <script>
+        // get username to div
+        document.getElementById('usernamediv').innerText = username; 
+        //when create click
+        function create(){
+            const username=document.getElementById("username").value;
+            const password=document.getElementById("password").value;
+            users.push([username, password]);
+            var p=1;
+            var w3=window.open('login.html');
+            w3.users=users;
+            w3.p=p;
+            window.close();  
+        } 
+        //when logout click
+        function logout(){
+            window.close();  
+            var p=1;
+            var w=window.open('login.html');
+            w.users=users;
+            w.p=p;
+        }
+    </script>
+</body>
+</html>
